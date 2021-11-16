@@ -1,0 +1,8 @@
+{
+  "extensions": {
+    "py": {
+      "runtime": "python3"
+    }
+  },
+  "ignore": ["demo-scenarios.txt", "node_modules"]
+}

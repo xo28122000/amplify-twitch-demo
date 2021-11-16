@@ -1,0 +1,49 @@
+- explain the hooks directory 
+- explain the hooks-config file 
+
+- Scenario 1: amplify status - also run git status
+
+add post-status.sh and write git status in the file and run:
+
+amplify status
+
+- Scenario 2: hooks on Amplify console
+
+change file in React and run git push 
+** the Amplify console will take about 10 mins to complete execution - come back here after Scenario 4 **
+
+//
+Amplify console will run the pre-push and post-push hooks
+pre-push - checks for sensitive file (keys.json) in functions
+post-push - sends a slack notification with the status of the build
+//
+
+- Scenario 3: 
+
+amplify add function 
+Lambda Function
+testFunction
+Node.js 
+No
+No
+
+//
+Runs post add function hook which deletes all .js files and creates .ts files insted and adds a tsconfig.json
+//
+
+- Scenario 4:
+
+add keys.json in root of function directory and run:
+
+amplify push 
+
+//
+Runs pre-push hook and determines there was a sensitive file(keys.json) and doesnt proceed forward the push execution
+//
+
+- cleanup: remove the funtion
+
+amplify function remove 
+
+** Complete to Scenario 2 **
+
