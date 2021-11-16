@@ -2,7 +2,7 @@
 const fs = require("fs");
 const projectRoot = process.cwd();
 const functionPath = projectRoot + "/amplify/backend/function";
-if (os.path.isdir(functionPath)) {
+if (fs.existsSync(functionPath)) {
   fs.readdirSync(projectRoot + "/amplify/backend/function").forEach(
     (funcDirName) => {
       if (fs.existsSync(functionPath + "/" + funcDirName + "/keys.json")) {

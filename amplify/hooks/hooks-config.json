@@ -4,5 +4,5 @@
       "runtime": "python3"
     }
   },
-  "ignore": ["demo-scenarios.txt", "node_modules"]
+  "ignore": ["demo-scenarios.txt", "node_modules", ".env"]
 }
